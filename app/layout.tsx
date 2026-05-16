@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 
 // ── Meta Pixel ─────────────────────────────────────────────────────────────
-const META_PIXEL_ID = "PIXEL_ID_PLACEHOLDER";
+const META_PIXEL_ID = "1339978458008219";
 
 // ── Fonts ───────────────────────────────────────────────────────────────────
 const dmSans = DM_Sans({

@@ -2,23 +2,22 @@
 
 /* ─── Octet SaaS Palette ─────────────────────────────────────────────────── */
 :root {
-  --octet-whiteout:   #FBFBFB;
-  --octet-floatie:    #EAE8EC;
-  --octet-mindaro:    #DCF365;
-  --octet-dirty-snow: #CBCDD5;
-  --octet-week:       #8D8D8F;
-  --octet-caviar:     #2C2C2E;
+  --dark-bg:       #1A1A1C;
+  --light-bg:      #FBFBFB;
+  --accent:        #DCF365;
+  --text-light:    #FBFBFB;
+  --text-dark:     #2C2C2E;
+  --muted-dark:    rgba(255,255,255,0.5);
+  --muted-light:   rgba(0,0,0,0.5);
+  --card-dark-bg:  rgba(255,255,255,0.03);
+  --card-dark-border: 1px solid rgba(255,255,255,0.08);
+  --floatie:       #EAE8EC;
+  --dirty-snow:    #CBCDD5;
 }
 
 /* ─── Tailwind v4 Theme Tokens ──────────────────────────────────────────── */
 @theme inline {
-  --font-sans: var(--font-montserrat), Montserrat, system-ui, sans-serif;
-  --color-octet-whiteout:   var(--octet-whiteout);
-  --color-octet-floatie:    var(--octet-floatie);
-  --color-octet-mindaro:    var(--octet-mindaro);
-  --color-octet-dirty-snow: var(--octet-dirty-snow);
-  --color-octet-week:       var(--octet-week);
-  --color-octet-caviar:     var(--octet-caviar);
+  --font-sans: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
 }
 
 /* ─── lp-wrap — mirrors scout.close-one.de / close-one.de ───────────────── */
@@ -47,16 +46,16 @@ html {
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
 body {
-  font-family: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FBFBFB;
-  color: #2C2C2E;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
 }
 
 /* Force light mode */
 @media (prefers-color-scheme: dark) {
-  body { background-color: #FBFBFB; color: #2C2C2E; }
+  body { background-color: var(--light-bg); color: var(--text-dark); }
 }
 
 /* ─── iOS Safari / Mobile ────────────────────────────────────────────────── */

@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 // ── Meta Pixel ─────────────────────────────────────────────────────────────
 const META_PIXEL_ID = "1339978458008219";
 
-// ── Fonts ───────────────────────────────────────────────────────────────────
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+// ── Font ────────────────────────────────────────────────────────────────────
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
@@ -34,7 +34,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#FBFBFB",
+  themeColor: "#2C2C2E",
 };
 
 // ── Layout ────────────────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={dmSans.variable}>
+    <html lang="de" className={montserrat.variable}>
       <body className="antialiased">
         <noscript>
           {/* eslint-disable-next-line @next/next/no-img-element */}

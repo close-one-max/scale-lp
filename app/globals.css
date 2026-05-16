@@ -1,35 +1,73 @@
 @import "tailwindcss";
 
-@theme {
-  --color-whiteout: #FBFBFB;
-  --color-caviar: #2C2C2E;
-  --color-mindaro: #DCF365;
-  --color-floatie: #EAE8EC;
-  --color-dirty-snow: #CBCDD5;
-  --font-sans: var(--font-dm-sans), system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, sans-serif;
+/* ─── Octet SaaS Palette ─────────────────────────────────────────────────── */
+:root {
+  --octet-whiteout:   #FBFBFB;
+  --octet-floatie:    #EAE8EC;
+  --octet-mindaro:    #DCF365;
+  --octet-dirty-snow: #CBCDD5;
+  --octet-week:       #8D8D8F;
+  --octet-caviar:     #2C2C2E;
 }
 
+/* ─── Tailwind v4 Theme Tokens ──────────────────────────────────────────── */
+@theme inline {
+  --font-sans: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+  --color-octet-whiteout:   var(--octet-whiteout);
+  --color-octet-floatie:    var(--octet-floatie);
+  --color-octet-mindaro:    var(--octet-mindaro);
+  --color-octet-dirty-snow: var(--octet-dirty-snow);
+  --color-octet-week:       var(--octet-week);
+  --color-octet-caviar:     var(--octet-caviar);
+}
+
+/* ─── lp-wrap — mirrors scout.close-one.de / close-one.de ───────────────── */
+.lp-wrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 769px) {
+  .lp-wrap {
+    max-width: none;
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+}
+
+/* ─── Smooth Scroll ──────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FBFBFB;
+  color: #2C2C2E;
+}
+
+/* Force light mode */
+@media (prefers-color-scheme: dark) {
+  body { background-color: #FBFBFB; color: #2C2C2E; }
+}
+
+/* ─── iOS Safari / Mobile ────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
   max-width: 100vw;
 }
-
 html,
 body {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
-  background-color: #fbfbfb;
-  color: #2c2c2e;
-}
-
-/* Force light mode — no dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  html,
-  body {
-    background-color: #fbfbfb;
-    color: #2c2c2e;
-  }
 }
